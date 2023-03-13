@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const cors =require( 'cors');
 const app = express();
 const PORT = 8080;
-const MONGODB_URL = 'mongodb+srv://xfinity:12345@delta.mcoyl.mongodb.net/todo';
+const MONGODB_URL = process.env.MONGO_URL;
 const taskRouter = require('./routes/tasks.js');
 
 mongoose.connect(MONGODB_URL);
