@@ -1,2 +1,2 @@
-# Sriganesh-DB
-MERN STACK
+# TodoBackend 
+MongoDB, ExpressJS, NodeJS
