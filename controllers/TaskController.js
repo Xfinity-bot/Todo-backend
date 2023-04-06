@@ -10,9 +10,7 @@ const getAllTask = async (req,res)=>{
 
 }
 const addTask = async (req,res)=>{
-    console.log("Updating Task");
     await Task.create({
-
         "title" : req.body.title,
         "isCompleted" : req.body.isCompleted, 
         "priority": req.body.priority,
@@ -26,7 +24,6 @@ const addTask = async (req,res)=>{
 }  
   
 const updateTask = async (req,res)=>{
-    console.log("Updating Task");
     await Task.findByIdAndUpdate(req.params.id,req.body).then((data)=>{res.status(200).json({
         "message":"Successfully Updated",
         "data":data
@@ -34,7 +31,6 @@ const updateTask = async (req,res)=>{
     "data": err})});
 }
 const deleteTask = async (req,res)=>{
-    console.log(req.params.id)
     await Task.deleteOne({'_id':req.params.id}).then((data)=>{res.status(201).json({
         "message":"Successfully Deleted",
         "data":data,
